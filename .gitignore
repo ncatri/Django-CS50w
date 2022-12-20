@@ -1,6 +1,4 @@
 wiki_env
-encyclopedia/__pycache__/
+*/**/__pycache__/
 #ignoring all files in "entries" folder starting with lowercase
 entries/[a-z]*
-
-
