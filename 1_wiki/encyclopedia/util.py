@@ -20,10 +20,13 @@ def save_entry(title, content):
     content. If an existing entry with the same title already exists,
     it is replaced.
     """
+    print(f"in save_entry(), content: {content}")
     filename = f"entries/{title}.md"
     if default_storage.exists(filename):
         default_storage.delete(filename)
+        print(f"deleted {filename}")
     default_storage.save(filename, ContentFile(content))
+    print(f"saved {filename}")
 
 
 def get_entry(title):
@@ -33,9 +36,10 @@ def get_entry(title):
     """
     entry = ""
     entries_filenames = os.listdir("entries")
+    print(f"in get_entry(), title: {title}")
     for file in entries_filenames:
-        f = file.lower().split(".")[0]
-        if title == f:
+#        f = file.lower().split(".")[0]
+        if title == file.split(".")[0]:
             entry = file
             break
     if not entry:
