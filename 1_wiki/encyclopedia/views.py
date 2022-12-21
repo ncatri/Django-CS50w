@@ -23,6 +23,10 @@ def entry(request, title):
         "content": markdown2.markdown(util.get_entry(title))
     })
 
+def random(request):
+    rand_entry = util.get_random_entry().split(".")[0]
+    return entry(request, rand_entry)
+
 def search_result(request):
     query = request.GET.get("q")
     if query in util.list_entries():
