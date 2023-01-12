@@ -2,3 +2,4 @@ wiki_env
 */**/__pycache__/
 #ignoring all files in "entries" folder starting with lowercase
 entries/[a-z]*
+.venv

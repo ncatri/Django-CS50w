@@ -50,10 +50,10 @@ class NewEntryForm(forms.Form):
     title = forms.CharField(label="Title", validators=[validate_entry_is_new])
     content = forms.CharField(widget=forms.Textarea)
 
-    def clean_title(self):
-        data = self.cleaned_data["title"]
-        validate_entry_is_new(self.title)
-        return data
+    # def clean_title(self):
+    #     data = self.cleaned_data["title"]
+    #     validate_entry_is_new(data)
+    #     return data
 
 def new_entry(request):
     if request.method == 'POST':
